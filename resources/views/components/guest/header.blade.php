@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="{{asset('guest/style/fontGlobal.css')}}">
 <link rel="stylesheet" href="{{asset('guest/style/Navigation_Style.css')}}">
 <link rel="stylesheet" href="{{asset('guest/style/animate.css')}}">
+<link rel="stylesheet" href="{{asset('guest/style/styleCustom.css')}}">
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 <link
 rel="stylesheet"

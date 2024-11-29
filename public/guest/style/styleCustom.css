@@ -1,0 +1,6 @@
+.bg-custom {
+    background-image: url('../assets/auth/bg-login.svg');
+    background-repeat: inherit;
+    background-size: cover;
+    background-position: center;
+}
