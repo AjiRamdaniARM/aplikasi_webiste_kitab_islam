@@ -26,3 +26,6 @@ Route::get('/change-language/{lang}', function ($lang) {
     }
     return Redirect::back();
 })->name('change.language');
+
+
+require_once __DIR__.'/auth.php';
