@@ -1,4 +1,4 @@
-<div x-show="showLogin === 'forgot' " x-cloak>
+<div x-show="showLogin === 'forgot' " x-cloak x-transition>
     <div class="content lg:flex justify-center items-center">
         <div class="body-one-component w-full"></div>
         <div class="body-two-component w-full h-full">

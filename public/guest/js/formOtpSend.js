@@ -1,4 +1,4 @@
-function LoginForm() {
+function globalState() {
     return {
         formData: {
             number: "",  
@@ -28,11 +28,11 @@ function LoginForm() {
 
 
         moveToOTP() {
-            if (this.isFormValid()) {
-                this.showOTP = true;
+            if (this.formData.number.length >= 12 && this.formData.number.length <= 13) {
+                this.showLogin = 'showOTP';  // 
                 console.log("Pindah ke OTP dengan nomor:", this.formData.number);
             } else {
-                alert("Nomor telepon dan password harus diisi terlebih dahulu.");
+                alert("Nomor telepon harus diisi dengan benar (12-13 digit).");
             }
         },
 

@@ -1,4 +1,4 @@
-<div x-show="showOTP" x-cloak>
+<div x-show="showLogin === 'showOTP'" x-cloak x-transition>
     <div class="content lg:flex justify-center items-center">
         <div class="body-one-component w-full"></div>
         <div class="body-two-component w-full h-full">
@@ -10,7 +10,7 @@
                     <div class="text-c">
                         <h1 class="text-center poppins-semibold lg:text-[36px] text-[20px]">{{ __('auth.text-otp-send') }}</h1>
                         <p class="text-center poppins-regular">{{ __('auth.text-otp-desk') }}</p>
-                        <div class="text-center text-[#E67E4D] poppins-semibold">089508742700</div>
+                        <div class="text-center poppins-semibold text-[#E67E4D]" x-text="formData.number"></div>
                     </div>
                     <form class="flex flex-col gap-5">
                         <div class="input-component">
