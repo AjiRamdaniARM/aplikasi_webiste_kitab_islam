@@ -62,7 +62,29 @@
         <li><a href="#">{{ __('navigation.Info') }}</a></li>
         <li><a href="#">{{ __('navigation.Infaq') }}</a></li>
         <li><a href="#">{{ __('navigation.IlmuHadis') }}</a></li>
-        <li><a href="#">{{ __('navigation.Bahasa') }}</a></li>
+        <div class="relative inline-block text-left">
+            {{-- === dropdown menu language --}}
+            <button onclick="toggleDropdown()" class="flex items-center gap-2 px-4 py-2 text-black hover:bg-gray-200 focus:outline-none">
+                {{ __('navigation.Bahasa') }}
+                <span>
+                    <img src="{{ asset('guest/assets/dunia.svg') }}" alt="icon-dunia" class="w-5 h-5">
+                </span>
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            {{-- === dropdown menu language === --}}
+            <div id="dropdown" class="hidden animate__animated animate__backInDown absolute right-0 w-48 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg z-10">
+                <ul class="py-1 text-black">
+                    <li>
+                        <a href="{{ route('change.language', ['lang' => 'en']) }}" class="block px-4 py-2 hover:bg-gray-100">English</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('change.language', ['lang' => 'ms']) }}" class="block px-4 py-2 hover:bg-gray-100">Malaysia</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </ul>
 </div>
 @include('components.guest.partial.scriptNav')
