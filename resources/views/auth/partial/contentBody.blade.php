@@ -1,4 +1,4 @@
-<div x-data="{ showLogin: true }" class="container mx-auto w-full lg:mt-10">
+<div x-data="{ showLogin: 'login' }" class="container mx-auto w-full lg:mt-10">
    {{-- === component login === --}}
    @include('auth.partial.loginComponent')
    {{-- === component forgot password === --}}
