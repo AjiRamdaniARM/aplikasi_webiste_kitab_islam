@@ -1,6 +1,9 @@
 <div class="banner-component mt-8 flex justify-center">
-    <div class="bg-[#E67E4D] w-full lg:h-[450px] h-auto rounded-[24px] px-8 py-10 lg:px-20 2xl:px-44 flex justify-center items-center">
-        <div class="body_component flex flex-col-reverse lg:grid lg:grid-cols-2 gap-2 lg:gap-20 items-center">
+    <div class="bg-[#E67E4D] relative w-full lg:h-[450px] h-auto rounded-[24px] px-8 py-10 lg:px-20 2xl:px-44 flex justify-center items-center">
+        <div class="particle-bg absolute left-0 bottom-0 z-1 2xl:block lg:block hidden ">
+            <img src="{{ asset('guest/assets/assetC.svg')}}" alt="particle-aset">
+        </div>
+        <div class="body_component z-10 flex flex-col-reverse lg:grid lg:grid-cols-2 gap-2 lg:gap-20 items-center">
             <div class="left-component flex flex-col gap-5">
                 <p class="text-white poppins-regular text-[15px] lg:text-[18px]">
                     {{ __('content.content-p-1') }}

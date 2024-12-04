@@ -8,12 +8,12 @@
         </div>
         <div class="list-menu">
             <ul class="gap-10 lg:flex md:hidden hidden items-center text-[20px] poppins-medium">
-                <li><a href="{{ route('home.page') }}" class="active poppins-semibold text-[#E67E4D]">{{ __('navigation.Home') }}</a></li>
-                <li><a href="#">{{ __('navigation.Info') }}</a></li>
-                <li><a href="#">{{ __('navigation.Infaq') }}</a></li>
-                <li><a href="#">{{ __('navigation.IlmuHadis') }}</a></li>
+                <li><button onclick="showSplashAndRedirect('{{ route('home.page') }}')" class="active {{ Route::currentRouteName() == 'home.page' ? 'poppins-semibold text-[#E67E4D] ' : ''}}">{{ __('navigation.Home') }}</button></li>
+                <li><button onclick="showSplashAndRedirect('{{ route('info.page') }}')" class="active {{ Route::currentRouteName() == 'info.page' ? 'poppins-semibold text-[#E67E4D] ' : ''}}">{{ __('navigation.Info') }}</button></li>
+                <li><button onclick="showSplashAndRedirect('{{ route('infaq.page') }}')" class="active {{ Route::currentRouteName() == 'infaq.page' ? 'poppins-semibold text-[#E67E4D] ' : ''}}">{{ __('navigation.Infaq') }}</button></li>
+                <li><button onclick="showSplashAndRedirect('{{ route('ilmu-hadis.page') }}')" class="active {{ Route::currentRouteName() == 'ilmu-hadis.page' ? 'poppins-semibold text-[#E67E4D] ' : ''}}">{{ __('navigation.IlmuHadis') }}</button></li>
                 <div class="relative inline-block text-left">
-                    {{-- === dropdown menu language --}}
+                    {{-- === dropdown menu language === --}}
                     <button onclick="toggleDropdown()" class="flex items-center gap-2 px-4 py-2 text-black hover:bg-gray-200 focus:outline-none">
                         {{ __('navigation.Bahasa') }}
                         <span>
@@ -38,7 +38,6 @@
             </ul>
         </div>
         <div class="button-login">
-          
             <button onclick="showSplashAndRedirect('{{ url('/login') }}')" class="poppins-medium bg-[#B61F2D] flex justify-center items-center text-white gap-3 w-[134px] h-[44px] rounded-[10px] hover:bg-[#920F1CFF]">
                 <span><img src="{{ asset('guest/assets/profile.svg') }}" alt="profile-icon"></span>{{ __('navigation.Masuk') }}
             </button>

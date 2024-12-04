@@ -1,4 +1,4 @@
-<div class="container flex flex-col gap-[8px] mt-80">
+<div class="container flex flex-col gap-[8px] mt-96 2xl:mt-80 lg:mt-80">
     {{-- === grid list === --}}
     <div class="grid lg:grid-cols-2 grid-cols-1  gap-[8px] justify-between">
         <div class="bg-[#F4F6F8] rounded-[10px]">
