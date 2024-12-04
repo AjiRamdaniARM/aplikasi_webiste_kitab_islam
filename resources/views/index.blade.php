@@ -9,5 +9,11 @@
         <section>
             @include('components.guest.list_view_data.index')
         </section>
+        <section>
+            @include('components.guest.box-component-kitab.index')
+        </section>
+        <section>
+            @include('components.guest.list-kitab.index')
+        </section>
     </main>
 </x-guest-layout>

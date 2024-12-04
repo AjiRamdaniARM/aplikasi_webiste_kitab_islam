@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name(('home.page'));
 
 Route::get('/change-language/{lang}', function ($lang) {
-    // Cek apakah bahasa yang dipilih tersedia
+    // === Cek apakah bahasa yang dipilih tersedia === //
     if (in_array($lang, ['en', 'ms'])) {
         Session::put('locale', $lang);
     }

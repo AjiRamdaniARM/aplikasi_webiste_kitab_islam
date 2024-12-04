@@ -10,6 +10,7 @@
             {{ $slot }}
         </div>
     </div>
+    @include('components.guest.footerComponent')
 </body>
 @include('components.guest.footer')
 </html>

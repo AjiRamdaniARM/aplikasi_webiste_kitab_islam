@@ -1,14 +1,14 @@
 <div x-show="showLogin === 'showOTP'" x-cloak x-transition>
     <div class="content lg:flex justify-center items-center">
         <div class="body-one-component w-full"></div>
-        <div class="body-two-component w-full h-full">
+         <div class="body-two-component w-full h-full">
             <div class="bg-white rounded-[24px] lg:rounded-[60px]">
                 <div class="body-c flex flex-col justify-center items-center gap-10 lg:p-20 py-20 px-10">
                     <div class="logo-branda mx-auto">
                         <img src="{{ asset('guest/assets/logo.svg') }}" alt="Logo Website">
                     </div>
                     <div class="text-c">
-                        <h1 class="text-center poppins-semibold lg:text-[36px] text-[20px]">{{ __('auth.text-otp-send') }}</h1>
+                         <h1 class="text-center poppins-semibold lg:text-[36px] text-[20px]">{{ __('auth.text-otp-send') }}</h1>
                         <p class="text-center poppins-regular">{{ __('auth.text-otp-desk') }}</p>
                         <div class="text-center poppins-semibold text-[#E67E4D]" x-text="formData.number"></div>
                     </div>

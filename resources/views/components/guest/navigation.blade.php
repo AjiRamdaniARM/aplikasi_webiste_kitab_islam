@@ -8,7 +8,7 @@
         </div>
         <div class="list-menu">
             <ul class="gap-10 lg:flex md:hidden hidden items-center text-[20px] poppins-medium">
-                <li><a href="#" class="active poppins-semibold text-[#E67E4D]">{{ __('navigation.Home') }}</a></li>
+                <li><a href="{{ route('home.page') }}" class="active poppins-semibold text-[#E67E4D]">{{ __('navigation.Home') }}</a></li>
                 <li><a href="#">{{ __('navigation.Info') }}</a></li>
                 <li><a href="#">{{ __('navigation.Infaq') }}</a></li>
                 <li><a href="#">{{ __('navigation.IlmuHadis') }}</a></li>
