@@ -1,4 +1,5 @@
 import './bootstrap';
+import { Chart } from 'chart.js';
 // resources/js/app.js
 
 import Alpine from 'alpinejs'

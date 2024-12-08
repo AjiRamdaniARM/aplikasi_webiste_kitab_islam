@@ -3,6 +3,7 @@
 return [
     'judul-kb' => 'KANDUNGAN KITAB',
     'deks_kb' => 'Kitab Mishkat al-Masabih disusun oleh Waliud-din Abdullah Muhammad bin ‘Abdullah al Khatib al-Umari at-Tibrizi ( w. 741 H) atau lebih dikenali Khatib al-Tibrizi. Kitab ini menambah baik kekurangan yang terdapat dalam kitab Masabih al-Sunnah oleh Imam Al-Baghawi (W. 516 H). Beliau masih mengekalkan susunan bab seperti kitab asalnya tetapi hadis-hadisnya dibahagikan kepada tiga fasal pada setiap bab:',
+    'button-modal-keluar' => 'keluar',
     'card-text-h1' => 'Fasal Pertama',
     'card-text-p' => 'Hadis-hadis yang diriwayatkan oleh al-Bukhari dan Muslim atau salah seorang daripada mereka berdua.',
     'card-text-h1-pasal2' => 'Fasal Ketiga',
