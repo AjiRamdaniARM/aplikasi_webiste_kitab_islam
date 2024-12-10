@@ -20,6 +20,9 @@
         <section>
             @include('components.pages.page-info.partials.pageKos')
         </section>
+        <section>
+            @include('components.pages.page-info.partials.pageKs')
+        </section>
     </body>
     <script src="{{ asset('guest/js/chart.js') }}"></script>
 </x-guest-layout>
