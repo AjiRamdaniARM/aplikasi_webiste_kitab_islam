@@ -20,5 +20,5 @@ return [
     'list-2' => 'Simplify the process of searching for hadiths and applications by using a search engine.',
     'list-3' => "Translate all hadiths into Bahasa Malaysia, brief commentary, hadith status from the point of view of sahih, hasan or dhoif and ends with Takhirj Hadith. According to Sheikh Nasiruddin al-Albani, the number of dhaif hadiths in this book is 773 hadiths and maudhu' hadiths are 19 [Referring to Maktabah Syamilah software] This can cause readers who do not have a basic knowledge of hadith to be influenced and make their support on weak and even false hadiths according to him.",
     'list-4' => "Making it easier for students, religious scholars and the general public to refer to hadith sources and help to perfect worship through the Sunnah of the Prophet Muhammad (peace be upon him).",
-    'button-modal-keluar' => 'keluar',
+    'button-modal-keluar' => 'Out Modal',
 ];

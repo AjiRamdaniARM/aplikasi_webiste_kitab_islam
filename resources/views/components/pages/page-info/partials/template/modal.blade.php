@@ -20,7 +20,7 @@
                         <div class="container">
                             <ul class="flex flex-col gap-3 poppins-regular">
                                 <li class="content-list-one">
-                                    <div class="content flex items-center gap-5 text-justify">
+                                    <div class=" flex items-center gap-5 text-justify">
                                         <!-- Icon -->
                                         <svg class="h-8 w-8 text-red-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
@@ -33,7 +33,7 @@
                                     </div>
                                 </li>
                                 <li class="content-list-one">
-                                    <div class="content flex items-center gap-5 text-justify">
+                                    <div class=" flex items-center gap-5 text-justify">
                                         <svg class="h-8 w-8 text-red-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                                             <polyline points="22 4 12 14.01 9 11.01" />
@@ -44,7 +44,7 @@
                                     </div>
                                 </li>
                                 <li class="content-list-one">
-                                    <div class="content flex items-center gap-5 text-justify">
+                                    <div class=" flex items-center gap-5 text-justify">
                                         <svg class="h-8 w-8 text-red-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                                             <polyline points="22 4 12 14.01 9 11.01" />
@@ -55,7 +55,7 @@
                                     </div>
                                 </li>
                                 <li class="content-list-one">
-                                    <div class="content flex items-center gap-5 text-justify">
+                                    <div class=" flex items-center gap-5 text-justify">
                                         <svg class="h-8 w-8 text-red-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                                             <polyline points="22 4 12 14.01 9 11.01" />
@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                    <button type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">out</button>
+                    <button type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">{{ __('kb/language.button-modal-keluar')}}</button>
                 </div>
                 </div>
             </div>
