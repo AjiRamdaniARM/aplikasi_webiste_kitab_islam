@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data: {
             labels: ['Jumlah kos keseluruhan', 'Jumlah derma diterima', 'Jumlah derma diperlukan' ], // Label sumbu X
             datasets: [{
-                label: 'Sales',
+                label: 'Total',
                 data: [512000, 73000, 439000], // Data untuk chart
                 backgroundColor: [
                     'rgba(0, 154, 255, 0.2)',

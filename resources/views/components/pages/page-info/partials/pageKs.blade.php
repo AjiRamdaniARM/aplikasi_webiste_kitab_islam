@@ -1,7 +1,7 @@
 <div class="container mx-auto">
     <div class="">
         <div class="parallax-container lg:h-[250vh] h-[400vh]">
-            <div class="content">
+            <div class="content-box">
                <div class="flex flex-col gap-5">
                 <div class="list-subNav">
                     <h2 class="lg:text-[30px] poppins-bold">  

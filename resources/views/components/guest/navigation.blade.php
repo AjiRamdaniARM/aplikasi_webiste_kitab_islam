@@ -57,13 +57,13 @@
         <button id="close-menu" class="text-black cursor-pointer text-3xl">&times;</button>
     </div>
     <ul class="flex flex-col items-center justify-center h-full gap-8 text-black text-xl">
-        <li><a href="#">{{ __('navigation.Home') }}</a></li>
-        <li><a href="#">{{ __('navigation.Info') }}</a></li>
-        <li><a href="#">{{ __('navigation.Infaq') }}</a></li>
-        <li><a href="#">{{ __('navigation.IlmuHadis') }}</a></li>
+        <li><a class="active {{ Route::currentRouteName() == 'home.page' ? 'poppins-semibold text-[#E67E4D] ' : ''}}" href="{{ route('home.page') }}">{{ __('navigation.Home') }}</a></li>
+        <li><a class="active {{ Route::currentRouteName() == 'info.page' ? 'poppins-semibold text-[#E67E4D] ' : ''}}" href="{{ route('info.page') }}">{{ __('navigation.Info') }}</a></li>
+        <li><a class="active {{ Route::currentRouteName() == 'infaq.page' ? 'poppins-semibold text-[#E67E4D] ' : ''}}" href="{{ route('infaq.page') }}">{{ __('navigation.Infaq') }}</a></li>
+        <li><a class="active {{ Route::currentRouteName() == 'ilmu-hadis.page' ? 'poppins-semibold text-[#E67E4D] ' : ''}}" href="{{ route('ilmu-hadis.page') }}">{{ __('navigation.IlmuHadis') }}</a></li>
         <div class="relative inline-block text-left">
             {{-- === dropdown menu language --}}
-            <button onclick="toggleDropdown()" class="flex items-center gap-2 px-4 py-2 text-black hover:bg-gray-200 focus:outline-none">
+            <button onclick="toggleDropdownMobile()" class="flex items-center gap-2 px-4 py-2 text-black hover:bg-gray-200 focus:outline-none">
                 {{ __('navigation.Bahasa') }}
                 <span>
                     <img src="{{ asset('guest/assets/dunia.svg') }}" alt="icon-dunia" class="w-5 h-5">
@@ -73,7 +73,7 @@
                 </svg>
             </button>
             {{-- === dropdown menu language === --}}
-            <div id="dropdown" class="hidden animate__animated animate__backInDown absolute right-0 w-48 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg z-10">
+            <div id="dropdownMobile" class=" hidden absolute right-0 w-48 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg z-10">
                 <ul class="py-1 text-black">
                     <li>
                         <a href="{{ route('change.language', ['lang' => 'en']) }}" class="block px-4 py-2 hover:bg-gray-100">English</a>

@@ -1,6 +1,10 @@
 function toggleDropdown() {
     document.getElementById("dropdown").classList.toggle("hidden");
 }
+
+function toggleDropdownMobile() {
+    document.getElementById("dropdownMobile").classList.toggle("hidden");
+}
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {
