@@ -11,17 +11,18 @@
                         <h1 class="text-center poppins-semibold lg:text-[36px] text-[20px]">{{ __('auth.judul') }}</h1>
                     </div>
                     <div>
-                        <form class="flex flex-col gap-5"  @submit.prevent="submitForm" >
+                        <form  action="{{ route('login.authenticate')}}" class="flex flex-col gap-5" @submit.prevent="submitForm" x-ref="form" method="POST">
+                            @csrf
                             <div class="input-component grid gap-2"">
-                                <input type="text" name="numberTp" x-model="formData.number" class="border-2 border-[#848996] rounded-[16px] lg:rounded-[24px] p-5 lg:w-[474px] lg:px-10 lg:py-5 poppins-regular" placeholder="{{ __('auth.placeholder1') }}">
+                                <input type="text" name="number_telephone" x-model="formData.number" class="border-2 border-[#848996] rounded-[16px] lg:rounded-[24px] p-5 lg:w-[474px] lg:px-10 lg:py-5 poppins-regular" placeholder="{{ __('auth.placeholder1') }}">
                                 <p x-show="showError && (!formData.number || formData.number.length < 12 || formData.number.length > 14)" class="text-red-500 text-sm mt-1">{{ __('auth.error-number-required') }}</p>
                             </div>
                             <div class="input-component grid gap-2">
-                                <input type="text" x-model="formData.password" class="border-2 border-[#848996] rounded-[16px] lg:rounded-[24px] p-5 lg:w-[474px] lg:px-10 lg:py-5 poppins-regular" placeholder="{{ __('auth.placeholder2') }}">
+                                <input type="text" x-model="formData.password" class="border-2 border-[#848996] rounded-[16px] lg:rounded-[24px] p-5 lg:w-[474px] lg:px-10 lg:py-5 poppins-regular" name="password" placeholder="{{ __('auth.placeholder2') }}">
                                 <p x-show="showError && (!formData.password || formData.password.length < 3 || formData.password.length > 100)" class="text-red-500 text-sm mt-1">{{ __('auth.error-password-required') }}</p>
                             </div>
                             <div class="button-component">
-                                <button type="submit"  class="bg-[#E67E4D] w-full rounded-[16px] p-5 poppins-semibold hover:bg-[#D16C3DFF]">{{ __('auth.button') }}</button>
+                                <button type="submit" class="bg-[#E67E4D] w-full rounded-[16px] p-5 poppins-semibold hover:bg-[#D16C3DFF]">{{ __('auth.button') }}</button>
                             </div>
                             <div class="component-b-text flex justify-between text-[10px] lg:text-[15px] poppins-regular">
                                 <button type="button" @click="moveToOTP()" 

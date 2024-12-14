@@ -19,6 +19,7 @@ function globalState() {
 
         submitForm() {
             if (this.isFormValid()) {
+                this.$refs.form.submit();
                 console.log("Form Submitted", this.formData);
             } else {
                 this.showError = true; 

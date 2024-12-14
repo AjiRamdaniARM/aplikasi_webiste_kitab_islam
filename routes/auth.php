@@ -1,10 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\authController\LoginController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Session;
 
 
+
+// === view route get === //
 Route::get('/login', function () {
     return view('auth.index');
 });
+
+// === view route post === //
+Route::post('/login/login-prosses', [LoginController::class, 'authenticate'])->name('login.authenticate');
