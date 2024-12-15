@@ -5,8 +5,8 @@ function globalState() {
             password: "", 
         },
         showOTP: false,    
-        showError: false,  
-
+        showError: false, 
+        
         isFormValid() {
             return (
                 this.formData.number.length > 0 && this.formData.password.length > 0 &&
@@ -16,6 +16,7 @@ function globalState() {
                 this.formData.password.length <= 100
             )
         },
+        
 
         submitForm() {
             if (this.isFormValid()) {

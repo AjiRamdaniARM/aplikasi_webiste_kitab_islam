@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 // === view route get === //
 Route::get('/login', function () {
     return view('auth.index');
-});
+})->name('login');
 
 // === view route post === //
 Route::post('/login/login-prosses', [LoginController::class, 'authenticate'])->name('login.authenticate');

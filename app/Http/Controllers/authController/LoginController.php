@@ -16,7 +16,7 @@ class LoginController extends Controller
         
         $credentials = $request->validate([
             'number_telephone' => ['required', 'numeric'],
-            'password' => ['required', 'string', 'min:6'], 
+            'password' => ['required', 'string', 'min:3'], 
         ]);
  
         if (Auth::attempt($credentials)) {
@@ -26,23 +26,15 @@ class LoginController extends Controller
         
         $cekUserNumber = User::where('number_telephone', $request->number_telephone)->first();
         if(!$cekUserNumber) {
-            return response()->json([
-                'message' => 'Login failed',
-                'errors' => [
-                    'phone_number' => ['Nomor telepon tidak ditemukan.'],
-                ],
-            ], 404);
+           return redirect() -> back()
+           ->withErrors(['number_telephone' => 'Nomor telepon yang dimasukkan salah.'])
+           ->with('message', 'your number is incorrect');
         }
 
         if (!Hash::check($request->password, $cekUserNumber->password)) {
-            // Jika password salah
-            return response()->json([
-                'message' => 'Login failed',
-                'errors' => [
-                    'password' => ['Password yang dimasukkan salah.'],
-                ],
-            ], 401);
+            return redirect()->back()
+            ->withErrors(['password' => 'Password yang dimasukkan salah.'])
+            ->with('message', 'your password is incorrect');
         }
- 
     }
 }

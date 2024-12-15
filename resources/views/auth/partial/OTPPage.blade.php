@@ -1,5 +1,5 @@
 <div x-show="showLogin === 'showOTP'" x-cloak x-transition>
-    <div class="content lg:flex justify-center items-center">
+    <div class=" lg:flex justify-center items-center">
         <div class="body-one-component w-full"></div>
          <div class="body-two-component w-full h-full">
             <div class="bg-white rounded-[24px] lg:rounded-[60px]">
