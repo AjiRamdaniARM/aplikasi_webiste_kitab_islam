@@ -2,9 +2,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<title>Website Kitab</title>
+<title>Admin Dashboard</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="{{ asset('guest/style/fontGlobal.css')}}">
+<link rel="stylesheet" href="{{asset('guest/style/fontGlobal.css')}}">
 <link rel="stylesheet" href="{{ asset('guest/style/styleCustom.css')}}">
 <link rel="stylesheet" href="{{ asset('guest/style/animate.css')}}">
 <link rel="stylesheet" href="{{ asset('guest/style/Navigation_Style.css')}}">
