@@ -38,3 +38,4 @@ Route::get('/change-language/{lang}', function ($lang) {
 
 
 require_once __DIR__.'/auth.php';
+require_once __DIR__.'/admin.php';

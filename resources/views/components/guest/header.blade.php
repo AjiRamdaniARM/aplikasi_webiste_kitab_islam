@@ -2,12 +2,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<title>Kitab & Hadis</title>
+<title>Admin Dashboard</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="{{asset('guest/style/fontGlobal.css')}}">
-<link rel="stylesheet" href="{{asset('guest/style/Navigation_Style.css')}}">
-<link rel="stylesheet" href="{{asset('guest/style/animate.css')}}">
-<link rel="stylesheet" href="{{asset('guest/style/styleCustom.css')}}">
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 <script src="{{ mix('js/app.js') }}" defer></script>
 <script src="{{ mix('css/app.css') }}" defer></script>
