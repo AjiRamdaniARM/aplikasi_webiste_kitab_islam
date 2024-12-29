@@ -23,3 +23,13 @@
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 />
+<style>
+    .custom-scroll::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+    }
+    
+    .custom-scroll {
+        -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer and Edge */
+        scrollbar-width: none;      /* Hide scrollbar for Firefox */
+    }
+    </style>

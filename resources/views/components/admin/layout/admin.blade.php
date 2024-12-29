@@ -8,11 +8,11 @@
         <div class="flex flex-1">
             {{-- == component sidebar === --}}
             @include('components.admin.components.sidebar')
-            <main class="flex-1 bg-gray-100 p-6 overflow-y-auto">
+            <main class="flex-1 bg-gray-100 p-6 h-screen overflow-y-auto custom-scroll"> 
                 {{-- === component header === --}}
                 @include('components.admin.components.header')
-                <div class="flex flex-col sm:justify-center items-center lg:px-10 px-5">
-                    <div class="w-full py-10">
+                <div class="flex flex-col sm:justify-center items-center lg:px-10 px-0">
+                    <div class="w-full py-10 ">
                         {{ $slot }}
                     </div>
                 </div>

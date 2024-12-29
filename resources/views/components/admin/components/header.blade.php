@@ -1,4 +1,4 @@
-<header class="bg-transparent text-white flex items-center justify-between px-4 py-3 gap-10">
+<header class="bg-transparent text-white flex items-center justify-between px-[50px] py-3 gap-10">
     <!-- Mobile Menu Toggle -->
     <button id="menu-toggle" class="sm:hidden text-black focus:outline-none">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -32,9 +32,13 @@
         </div>
         <div class="flex items-center gap-4 text-black">
             <div class="icon bg-transparent border-2 border-gray-300 p-2 rounded-full">
-                <img src="{{ asset('guest/assets/profile.svg')}}" alt="profile-icon" class="h-6 w-6">
+                <img src="{{ asset('admin/profile/profile_contoh.jpg')}}" alt="profile-icon" class="h-6 w-6">
             </div>
-            <h1 class="text-lg poppins-semibold">Aji Ramdani</h1>
+            @if(Auth::check())
+                <h1 class="text-lg poppins-semibold">{{ Auth::user()->name }}</h1>
+            @else
+            <h1> - </h1>
+            @endif
         </div>
     </div>
 </header>
