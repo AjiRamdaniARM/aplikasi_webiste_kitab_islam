@@ -4,6 +4,10 @@
     @include('components.guest.header')
 </head>
 <body class="font-sans text-gray-900 antialiased bg-[#F5F5FD]">
+    <x-splash-screen />
+    <div class="container-modal z-96">
+        @include('components.admin.components.modal-notif')
+    </div>
     <div class="flex flex-col h-screen">
         <div class="flex flex-1">
             {{-- == component sidebar === --}}
@@ -17,7 +21,7 @@
                     </div>
                 </div>
             </main>
-        </div>
+        </div> 
     </div>
     
 </body>

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\admin\profileController;
+use App\Models\ContentKitab;
+use App\Models\IslamiKitab;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
@@ -8,8 +10,14 @@ use Illuminate\Support\Facades\Session;
 
 
 Route::get('/dashboard', function () {
-    return view('components.admin.pages.dashboard');
+    $get_count_kitab = IslamiKitab::count();
+    return view('components.admin.pages.dashboard' , ['count_kitabs' => $get_count_kitab]);
 })->name('dashboard');
+
+Route::get('/all-data', function () {
+    $getKitabs = ContentKitab::with('islamiKitab')->get();
+    return view('components.admin.pages.all-data', ['kitabs' => $getKitabs]);
+})->name('all-data');
 
 // partial profile 
 Route::get('/profile/edited/{username}', function() {

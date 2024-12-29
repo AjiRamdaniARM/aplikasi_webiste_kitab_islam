@@ -15,7 +15,7 @@ class profileController extends Controller
             // Validasi data input
             $validated = $request->validate([
                 'name' => 'required|string|max:255',
-                'phone' => 'nullable|string|max:20',
+                'phone' => 'nullable|string|max:14',
                 'email' => 'required|email|max:255|unique:users,email,' . Auth::id(),
                 'password' => 'nullable|string|min:6|confirmed',
                 'profile_image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
@@ -33,7 +33,6 @@ class profileController extends Controller
             if ($request->filled('password')) {
                 $user->password = Hash::make($request->password);
             }
-    
             // Proses gambar profil jika ada
             if ($request->hasFile('profile_image')) {
                 // Hapus gambar lama jika ada
@@ -43,7 +42,6 @@ class profileController extends Controller
                         unlink($oldImagePath);
                     }
                 }
-    
                 // Simpan gambar baru
                 $file = $request->file('profile_image');
                 $fileName = $user->name . '_' . $file->getClientOriginalName(); // Nama unik untuk file
@@ -56,7 +54,7 @@ class profileController extends Controller
             $user->save();
     
             // Berikan pesan sukses
-            return redirect()->back()->with('success', 'Profile updated successfully!');
+            return redirect()->back()->with('message', 'Profile updated successfully!');
         } catch (\Exception $e) {
             // Tangani error
             return redirect()->back()->with('error', 'An error occurred: ' . $e->getMessage());

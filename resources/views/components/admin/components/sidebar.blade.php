@@ -1,22 +1,26 @@
-  <nav id="sidebar" class="bg-white text-white w-64 h-full fixed sm:relative transform -translate-x-full flex flex-col items-center sm:translate-x-0 transition-transform duration-300 z-50 ease-in-out">
+
+<nav id="sidebar" class="bg-white text-white w-64 h-full fixed sm:relative transform -translate-x-full flex flex-col items-center sm:translate-x-0 transition-transform duration-300 z-50 ease-in-out">
     <div class="icon-component-sidebar-logo space-y-2 px-4 mt-10 py-10">
-      <img class="lg:w-full w-10" src="{{ asset('guest/assets/logo.svg')}}" alt="logo-component">
+      <a href="javascript:void(0);" onclick="showSplashAndRedirect('{{ url('/') }}')" class="transition-all duration-300 ease-in-out">
+        <img class="lg:w-full w-10" src="{{ asset('guest/assets/logo.svg') }}" alt="logo-component">
+      </a>
+      @include('components.guest.partial.scriptNav')
     </div>
     <div class="container-list-navbar flex flex-col gap-10">
       <div class="box-overview">
         <h2 class="uppercase poppins-semibold text-[#848996]">overview</h2>
         <ul class="space-y-2 flex flex-col items-start gap-3 py-4 text-black">
-          <li><a href="#" class="active poppins-semibold flex items-center justify-center gap-2">
-            <div class="icon">
+          <li><a href="javascript:void(0);" onclick="showSplashAndRedirect('{{ route('dashboard') }}')" class="active transition-all hover:scale-105 {{ request()->routeIs('dashboard') ? 'poppins-semibold' : 'poppins-medium'}} flex items-center justify-center gap-2">
+            <div class="icon" >
               <img src="{{ asset('guest/assets/grid-4.svg')}}" alt="grid-icon">
             </div>
             Dashboard
           </a></li>
-          <li><a href="#" class="active poppins-medium flex items-center justify-center gap-2">
+          <li><a href="javascript:void(0);" onclick="showSplashAndRedirect('{{ route('all-data') }}')" class="active transition-all hover:scale-105 {{ request()->routeIs('all-data') ? 'poppins-semibold' : 'poppins-medium'}} flex items-center justify-center gap-2">
             <div class="icon">
               <img src="{{ asset('guest/assets/Clip board.svg')}}" alt="grid-icon">
             </div>
-            Data Hadist
+            All Data
           </a></li>
         </ul>
       </div>

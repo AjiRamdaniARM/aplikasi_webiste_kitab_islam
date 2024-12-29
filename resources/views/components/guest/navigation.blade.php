@@ -37,11 +37,19 @@
                 </div>
             </ul>
         </div>
+        @auth
+        <div class="button-dashboard">
+            <button onclick="showSplashAndRedirect('{{ url('/dashboard') }}')" class="poppins-medium bg-[#B61F2D] flex justify-center items-center text-white gap-3 w-[134px] h-[44px] rounded-[10px] hover:bg-[#920F1CFF]">
+               Dashboard
+            </button>
+        </div>
+        @else
         <div class="button-login">
             <button onclick="showSplashAndRedirect('{{ url('/login') }}')" class="poppins-medium bg-[#B61F2D] flex justify-center items-center text-white gap-3 w-[134px] h-[44px] rounded-[10px] hover:bg-[#920F1CFF]">
                 <span><img src="{{ asset('guest/assets/profile.svg') }}" alt="profile-icon"></span>{{ __('navigation.Masuk') }}
             </button>
         </div>
+        @endauth
         <div class="nav-container lg:hidden">
             <button id="menu-toggle" class="hamburger-lines relative z-50">
                 <span class="line line1"></span>

@@ -31,9 +31,11 @@
             <div class="h-6 w-[3px] bg-gray-500"></div>
         </div>
         <div class="flex items-center gap-4 text-black">
-            <div class="icon bg-transparent border-2 border-gray-300 p-2 rounded-full">
-                <img src="{{ asset('admin/profile/profile_contoh.jpg')}}" alt="profile-icon" class="h-6 w-6">
-            </div>
+            <div class="icon rounded-full">
+                <img src="{{ asset('admin/profile/' . Auth::user()->profile) }}" 
+                     alt="profile-icon" 
+                     class="h-10 w-10 rounded-full object-cover">
+            </div>            
             @if(Auth::check())
                 <h1 class="text-lg poppins-semibold">{{ Auth::user()->name }}</h1>
             @else
