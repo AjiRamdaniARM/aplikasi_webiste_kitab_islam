@@ -9,7 +9,13 @@
 
 ## About Client Kitabs and Hadist Web Application Project
 
-<h1 align="center" style="display:flex; align-items:center; justify-content:center; gap:20px"><a href="" target="_blank"><img src="./public/guest/assets/logo.svg" width="100" alt="Laravel Logo"></a>Kitabs & Hadits App Malaysia</h1>
+<h1 align="center">
+    <a href="" target="_blank">
+        <img align="center" src="./public/guest/assets/logo.svg" width="100" alt="Laravel Logo">
+    </a>
+    Kitabs & Hadits App Malaysia
+</h1>
+
 This project is focused on creating a comprehensive web application dedicated to managing and presenting Islamic resources, particularly Kitabs and Hadiths. The goal is to deliver an efficient, user-friendly platform that enhances accessibility and study of these significant materials. Key features include search functionality, categorized content, and mobile responsiveness to cater to diverse user needs.
 
 -   [Simple, fast routing engine](https://laravel.com/docs/routing).
