@@ -20,6 +20,10 @@ Route::get('/all-data', function () {
     return view('components.admin.pages.all-data', ['kitabs' => $getKitabs]);
 })->name('all-data');
 
+Route::get('/all-data/form-create', function () {
+    return view('components.admin.partials.all-data.form-component');
+})->name('all-data.form');
+
 
 // partial controller kitabs
 Route::get('/all-data/delete/{nama_kitabs}', [KitabsController::class , 'delete'])->name('all-data.kitabs.delete');
