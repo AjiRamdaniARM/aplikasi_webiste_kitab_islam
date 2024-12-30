@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\KitabsController\KitabsController;
 use App\Http\Controllers\admin\profileController;
 use App\Models\ContentKitab;
 use App\Models\IslamiKitab;
@@ -18,6 +19,11 @@ Route::get('/all-data', function () {
     $getKitabs = ContentKitab::with('islamiKitab')->get();
     return view('components.admin.pages.all-data', ['kitabs' => $getKitabs]);
 })->name('all-data');
+
+
+// partial controller kitabs
+Route::get('/all-data/delete/{nama_kitabs}', [KitabsController::class , 'delete'])->name('all-data.kitabs.delete');
+
 
 // partial profile 
 Route::get('/profile/edited/{username}', function() {
