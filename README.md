@@ -7,9 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## About Client Kitabs and Hadist Web Application Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<h1 align="center" style="display:flex; align-items:center; justify-content:center; gap:20px"><a href="" target="_blank"><img src="./public/guest/assets/logo.svg" width="100" alt="Laravel Logo"></a>Kitabs & Hadits App Malaysia</h1>
+This project is focused on creating a comprehensive web application dedicated to managing and presenting Islamic resources, particularly Kitabs and Hadiths. The goal is to deliver an efficient, user-friendly platform that enhances accessibility and study of these significant materials. Key features include search functionality, categorized content, and mobile responsiveness to cater to diverse user needs.
 
 -   [Simple, fast routing engine](https://laravel.com/docs/routing).
 -   [Powerful dependency injection container](https://laravel.com/docs/container).
