@@ -16,17 +16,12 @@
     Kitabs & Hadits App Malaysia
 </h1>
 
-This project is focused on creating a comprehensive web application dedicated to managing and presenting Islamic resources, particularly Kitabs and Hadiths. The goal is to deliver an efficient, user-friendly platform that enhances accessibility and study of these significant materials. Key features include search functionality, categorized content, and mobile responsiveness to cater to diverse user needs.
+This project is focused on creating a comprehensive web application dedicated to managing and presenting Islamic resources, particularly Kitabs and Hadiths. The goal is to deliver an efficient, user-friendly platform that enhances accessibility and study of these significant materials. Key features include search functionality, categorized content, and mobile responsiveness to cater to diverse user needs.n
 
--   [Simple, fast routing engine](https://laravel.com/docs/routing).
--   [Powerful dependency injection container](https://laravel.com/docs/container).
--   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
--   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
--   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
--   [Robust background job processing](https://laravel.com/docs/queues).
--   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   [Laravel Version 11](https://laravel.com/docs).
+-   [Tailwind Css](https://tailwindcss.com/).
+-   [UI Design in Figma](https://www.figma.com/s).
+-   [Database Mysql in server Laragon](https://www.mysql.com/).
 
 ## Learning Laravel
 
