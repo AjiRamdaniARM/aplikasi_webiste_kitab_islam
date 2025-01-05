@@ -34,16 +34,16 @@
                         <label for="nama_kitab" class="block text-sm poppins-semibold py-2 text-gray-700">Status</label>
                         <select name="nama_kitab" id="nama_kitab" class="mt-1 block w-full border border-gray-300 rounded-2xl shadow-sm focus:border-[#E67E4D] focus:ring-[#E67E4D] px-5 py-2" required>
                             <option value="" disabled selected>Pilih Nama Status</option>
-                            <option value="kitab1">Kitab 1</option>
-                            <option value="kitab2">Kitab 2</option>
-                            <option value="kitab3">Kitab 3</option>
+                            @foreach ($status as  $sts )
+                                <option value="{{$sts->id}}">{{$sts->name_status}}</option>
+                            @endforeach
                         </select>                        
                     </div>
 
                     <!-- Input Penulis -->
                     <div class="w-full">
-                        <label for="halaman" class="block text-sm poppins-semibold py-2 text-gray-700">Halaman</label>
-                        <button type="button" onclick="alert('halo dek')" class="mt-1 block w-full border border-gray-300 rounded-2xl shadow-sm px-5 py-2 focus:border-[#E67E4D] focus:ring-[#E67E4D]">Add Status</button>
+                        <label for="halaman" class="block text-sm poppins-semibold py-2 text-gray-700">Masukkan Nama Status Baru</label>
+                        <button x-on:click="isModalOpen = true"  type="button" class="mt-1 block w-full border border-gray-300 rounded-2xl shadow-sm px-5 py-2 focus:border-[#E67E4D] focus:ring-[#E67E4D]">Add Status</button>
                     </div>
                 </div>
 
@@ -70,3 +70,4 @@
         </div>
     </div>
 </div>
+

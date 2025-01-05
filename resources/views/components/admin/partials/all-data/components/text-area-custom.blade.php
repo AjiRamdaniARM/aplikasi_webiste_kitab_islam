@@ -7,7 +7,7 @@
   
 <script>
   const quill1 = new Quill('#editor', {
-    placeholder: 'Masukkan Arti untuk Editor 1',
+    placeholder: 'Masukkan Arti',
     theme: 'snow',
   });
 

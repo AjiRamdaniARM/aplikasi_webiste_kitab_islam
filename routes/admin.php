@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\KitabsController\KitabsController;
 use App\Http\Controllers\admin\profileController;
 use App\Models\ContentKitab;
 use App\Models\IslamiKitab;
+use App\Models\StatusKitab;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,8 @@ Route::get('/all-data', function () {
 })->name('all-data');
 
 Route::get('/all-data/form-create', function () {
-    return view('components.admin.partials.all-data.form-component');
+    $status = StatusKitab::all();
+    return view('components.admin.partials.all-data.form-component', ['status' => $status]);
 })->name('all-data.form');
 
 

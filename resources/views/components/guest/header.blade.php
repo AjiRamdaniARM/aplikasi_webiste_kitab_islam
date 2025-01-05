@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="{{ asset('guest/style/animate.css')}}">
 <link rel="stylesheet" href="{{ asset('guest/style/Navigation_Style.css')}}">
 @vite(['resources/css/app.css', 'resources/js/app.js'])
-<script src="{{ mix('js/app.js') }}" defer></script>
-<script src="{{ mix('css/app.css') }}" defer></script>
+{{-- <script src="{{ mix('js/app.js') }}" defer></script>
+<script src="{{ mix('css/app.css') }}" defer></script> --}}
 <style>
     [x-cloak] {
         display: none !important;

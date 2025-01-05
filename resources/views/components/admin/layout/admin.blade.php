@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     @include('components.guest.header')
+    @livewireStyles
 </head>
 <body class="font-sans text-gray-900 antialiased bg-[#F5F5FD]">
     <x-splash-screen />
@@ -23,7 +24,7 @@
             </main>
         </div> 
     </div>
-    
+    @livewireScripts
 </body>
 <script src="{{ asset('guest/js/sidebarAdmin.js')}}"></script>
 </html>
