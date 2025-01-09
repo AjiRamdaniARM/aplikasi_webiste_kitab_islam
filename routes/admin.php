@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\KitabsController\KitabsController;
+use App\Http\Controllers\admin\KitabsController\StatusController;
 use App\Http\Controllers\admin\profileController;
 use App\Models\ContentKitab;
 use App\Models\IslamiKitab;
@@ -29,6 +30,9 @@ Route::get('/all-data/form-create', function () {
 
 // partial controller kitabs
 Route::get('/all-data/delete/{nama_kitabs}', [KitabsController::class , 'delete'])->name('all-data.kitabs.delete');
+
+// controller status
+Route::post('/postStatus', [StatusController::class, 'store'])->name('status.post');
 
 
 // partial profile 

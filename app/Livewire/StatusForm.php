@@ -8,17 +8,17 @@ use Livewire\Component;
 class StatusForm extends Component
 {
 
-    public $name_kitabs;
+    public $name_status;
     public $isSubmitted = false;
 
     protected $rules = [
-        'name_kitabs' => 'required|string|max:255',
+        'name_status' => 'required|string|max:255',
     ];
 
     public function submit()
     {
         $this->validate();
-        StatusKitab::create(['name_kitabs' => $this->name_kitabs]);
+        StatusKitab::create(['name_status' => $this->name_status]);
         $this->isSubmitted = true;
     }
     public function render()
