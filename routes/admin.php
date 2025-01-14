@@ -22,10 +22,15 @@ Route::get('/all-data', function () {
     return view('components.admin.pages.all-data', ['kitabs' => $getKitabs]);
 })->name('all-data');
 
-Route::get('/all-data/form-create', function () {
+Route::get('/all-data/form-create/{id}', function ($id) {
     $status = StatusKitab::all();
-    return view('components.admin.partials.all-data.form-component', ['status' => $status]);
+    $contentKitab = ContentKitab::find($id)->first();
+    return view('components.admin.partials.all-data.form-component', ['status' => $status, 'contentKitab' => $contentKitab]);
 })->name('all-data.form');
+
+Route::post('/prosses/{id}',[KitabsController::class, 'post'])->name('form_create.post');
+Route::post('/kitabPost/{id}',[KitabsController::class, 'hadistPost'])->name('hadist.post');
+Route::post('/proccesing/added',[KitabsController::class, 'kitabsAdded'])->name('kitabs.post');
 
 
 // partial controller kitabs

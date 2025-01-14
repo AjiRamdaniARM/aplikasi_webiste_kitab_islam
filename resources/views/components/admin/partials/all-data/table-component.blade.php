@@ -32,7 +32,7 @@
                     </div>
                 </a>
             </div>
-            <button onclick="showSplashAndRedirect('{{ route('all-data.form') }}')" class="focus:ring-2 focus:ring-offset-2 focus:ring-[#E67E4D] mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-[#E67E4D] hover:bg-[#E67E4D] focus:outline-none rounded">
+            <button  x-on:click="isModalOpenCreate = true" class="focus:ring-2 focus:ring-offset-2 focus:ring-[#E67E4D] mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-[#E67E4D] hover:bg-[#E67E4D] focus:outline-none rounded">
                 <p class="text-sm font-medium leading-none text-white">Add Kitabs</p>
             </button>
         </div>
@@ -48,7 +48,7 @@
                             </td>                                    
                             <td class="">
                                 <div class="flex items-center pl-5">
-                                    <p class="text-base font-medium leading-none text-gray-700 mr-2">{{ $kitab->islamiKitab->name_kitabs}}</p>
+                                    <p class="text-base font-medium leading-none text-gray-700 mr-2">{{ $kitab->islamiKitab?->name_kitabs ?? 'Nama tidak tersedia' }}</p>
                                 </div>
                             </td>
                             <td class="pl-5">
@@ -60,7 +60,7 @@
                             <td>
                                 <div class="flex space-x-4 px-5 pt-2">
                                     {{-- component edited icon --}}
-                                    <button class="focus:ring-2 focus:ring-[#E67E4D] rounded-md focus:outline-none" onclick="editFunction()" role="button" aria-label="edit">
+                                    <button class="focus:ring-2 focus:ring-[#E67E4D] rounded-md focus:outline-none" onclick="window.location.href='{{ route('all-data.form', ['id' => $kitab->id])}}'" role="button" aria-label="edit">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                             <path d="M2.5 14.1665V17.4998H5.83333L14.3333 8.99984L11 5.6665L2.5 14.1665Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                                             <path d="M10.8333 4.8335L13.8333 7.8335" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>

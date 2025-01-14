@@ -8,65 +8,102 @@
                     </div>
                 </a>
             </div>
-        </div>
-
-        <div class="mt-7 overflow-x-auto form-input">
-            <form action="" method="POST" enctype="multipart/form-data" class="space-y-6">
+        </div> 
+        <div x-data="postData()" x-init="init" class="mt-7 overflow-x-auto form-input">
+            <form method="POST" @submit.prevent="submitFormData" class="space-y-6">
                 @csrf
+                <!-- Form Group Rujukan dan Rujukan -->
                 <div class="flex flex-col md:flex-row gap-4">
                     <!-- Input Nama Kitab -->
                     <div class="w-full">
-                        <label for="nama_kitab" class="block text-sm poppins-semibold py-2 text-gray-700">Rujukan</label>
-                        <input type="text" name="nama_kitab" id="nama_kitab" class="mt-1 block w-full border border-gray-300 rounded-2xl shadow-sm focus:border-[#E67E4D]  focus:ring-[#E67E4D] px-5 py-2" placeholder="Masukkan Nama Rujukan" required>
+                        <label for="rujukan" class="block text-sm font-semibold text-gray-700 py-2">Rujukan</label>
+                        <input 
+                            type="text" 
+                            name="rujukan" 
+                            id="rujukan" 
+                            x-model="rujukan" 
+                            class="mt-1 block w-full border border-gray-300 rounded-2xl shadow-sm focus:border-[#E67E4D] focus:ring-[#E67E4D] px-5 py-2" 
+                            placeholder="Masukkan Nama Rujukan" 
+                            required
+                        >
                     </div>
-
-                    <!-- Input Penulis -->
+        
+                    <!-- Input Halaman -->
                     <div class="w-full">
-                        <label for="halaman" class="block text-sm poppins-semibold py-2 text-gray-700">Halaman</label>
-                        <input type="text" name="halaman" id="halaman" class="mt-1 block w-full border border-gray-300 rounded-2xl shadow-sm px-5 py-2 focus:border-[#E67E4D] focus:ring-[#E67E4D]" placeholder="Masukkan Halaman Kitabs" required>
-                    </div>
+                        <label for="halaman" class="block text-sm font-semibold text-gray-700 py-2">Halaman</label>
+                        <input 
+                            type="text" 
+                            name="halaman" 
+                            id="halaman" 
+                            x-model="halaman" 
+                            class="mt-1 block w-full border border-gray-300 rounded-2xl shadow-sm px-5 py-2 focus:border-[#E67E4D] focus:ring-[#E67E4D]" 
+                            placeholder="Masukkan Halaman Kitab" 
+                            required
+                        >
+                    </div> 
                 </div>
-
-
-                <div class="flex flex-col md:flex-row gap-4">
-                    <!-- Input Nama Kitab -->
+        
+                 <!-- Dropdown Status -->
+               <div class="flex flex-col md:flex-row gap-4">
                     <div class="w-full">
-                        <label for="nama_kitab" class="block text-sm poppins-semibold py-2 text-gray-700">Status</label>
-                        <select name="nama_kitab" id="nama_kitab" class="mt-1 block w-full border border-gray-300 rounded-2xl shadow-sm focus:border-[#E67E4D] focus:ring-[#E67E4D] px-5 py-2" required>
+                        <label for="status_kitab" class="block text-sm font-semibold text-gray-700 py-2">Status</label>
+                        <select 
+                            name="status_kitab" 
+                            id="status_kitab" 
+                            x-model = 'id_status'
+                            class="mt-1 block w-full border border-gray-300 rounded-2xl shadow-sm focus:border-[#E67E4D] focus:ring-[#E67E4D] px-5 py-2" 
+                            required
+                        >
                             <option value="" disabled selected>Pilih Nama Status</option>
-                            @foreach ($status as  $sts )
-                                <option value="{{$sts->id}}">{{$sts->name_status}}</option>
+                            @foreach ($status as $sts)
+                                <option value="{{ $sts->id }}">{{ $sts->name_status }}</option>
                             @endforeach
                         </select>                        
                     </div>
-
-                    <!-- Input Penulis -->
-                    <div class="w-full">
-                        <label for="halaman" class="block text-sm poppins-semibold py-2 text-gray-700">Masukkan Nama Status Baru</label>
-                        <button x-on:click="isModalOpen = true"  type="button" class="mt-1 block w-full border border-gray-300 rounded-2xl shadow-sm px-5 py-2 focus:border-[#E67E4D] focus:ring-[#E67E4D]">Add Status</button>
-                    </div>
-                </div>
-
-
-                <!-- Input Arti Arabs -->
+                </div> 
+                <!-- Input Arti Arab -->
                 <div>
-                    <label for="deskripsi" class="block text-sm poppins-semibold py-2 text-gray-700">Arti Arab</label>
+                    <label for="deskripsi" class="block text-sm font-semibold text-gray-700 py-2">Arti Arab</label>
                     @include('components.admin.partials.all-data.components.text-area-custom')
                 </div>
-
-                  <!-- Input Arti Arabs -->
-                <div>
+        
+                <!-- Input Tambahan -->
+               <div>
                     @include('components.admin.partials.all-data.components.text-area-custom-1')
-                </div>
-
-
+                </div>  
                 <!-- Submit Button -->
                 <div class="flex justify-end">
-                    <button type="submit" class="inline-flex items-center px-6  py-3 bg-[#E67E4D] text-white poppins-semibold text-sm leading-none rounded hover:bg-[#E67E4D]/90 focus:ring-2 focus:ring-offset-2 focus:ring-[#E67E4D]">
-                        Simpan Kitab
+                    <div x-show="successMessage" 
+                    x-transition class="inline-flex w-full justify-center rounded-md bg-green-500/50 px-3 py-2 text-sm font-semibold text-green-800 shadow-sm  sm:ml-3 sm:w-auto">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="w-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>   
+                        </span>  
+                        <span  x-text="successMessage"></span>
+                        &nbsp;
+                    </div>
+                    <button type="submit" 
+                    x-bind:disabled="isSubmitting" 
+                    class="inline-flex w-full justify-center rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 sm:ml-3 sm:w-auto">
+                        <span x-show="!isSubmitting">Submit</span>
+                        <span x-show="isSubmitting" class="flex items-center">
+                            <svg class="animate-spin h-5 w-5 text-white mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                            </svg>
+                            Loading...
+                        </span>
                     </button>
+              
                 </div>
             </form>
         </div>
+        
     </div>
 </div>
+
+<script>
+    const statusPostUrlData = "{{ route('form_create.post', ['id' => $contentKitab->id]) }}";
+</script>
+<script src="{{asset('admin/JS/dataPost.js')}}"></script>

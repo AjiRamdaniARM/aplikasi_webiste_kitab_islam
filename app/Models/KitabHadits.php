@@ -12,6 +12,7 @@ class KitabHadits extends Model
     protected $table = 'kitab_hadits';
 
     protected $fillable = [
+        'id',
         'deksripsi_hadits',
     ];
 

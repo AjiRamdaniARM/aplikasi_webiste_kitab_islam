@@ -12,11 +12,12 @@ class IslamiKitab extends Model
     protected $table = 'islami_kitabs';
 
     protected $fillable = [
+        'id',
         'name_kitabs',
     ];
 
     public function contentKitabs()
     {
-        return $this->hasMany(ContentKitab::class, 'id_islami_kitabs');
+        return $this->hasMany(ContentKitab::class, 'id');
     }
 }

@@ -1,0 +1,6 @@
+.box-deskripsi-editor {
+    min-height: 200px; /* Atur tinggi editor */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}

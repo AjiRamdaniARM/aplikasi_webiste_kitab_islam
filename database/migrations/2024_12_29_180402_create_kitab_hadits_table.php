@@ -10,6 +10,7 @@ class CreateKitabHaditsTable extends Migration
     {
         Schema::create('kitab_hadits', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_id_hs');
             $table->text('deksripsi_hadits');
             $table->timestamps();
         });

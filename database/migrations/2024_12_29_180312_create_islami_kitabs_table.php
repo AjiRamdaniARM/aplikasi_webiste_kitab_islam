@@ -10,6 +10,7 @@ class CreateIslamiKitabsTable extends Migration
     {
         Schema::create('islami_kitabs', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_id_nk');
             $table->string('name_kitabs');
             $table->timestamps();
         });

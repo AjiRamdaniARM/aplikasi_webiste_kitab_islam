@@ -12,6 +12,7 @@ class DetailKitab extends Model
     protected $table = 'detail_kitabs';
 
     protected $fillable = [
+        'id',
         'rujukan',
         'halaman',
     ];

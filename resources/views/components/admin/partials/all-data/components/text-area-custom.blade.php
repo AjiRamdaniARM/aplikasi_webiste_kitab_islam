@@ -1,17 +1,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
-<input type="hidden" name="content_latin" id="quillContent">
-<div id="editor">
+<input type="hidden" x-model="content_latin" name="content_latin" id="quillContent">
+<div class="box-deskripsi-editor" id="editor">
 </div>
-  
-<script>
-  const quill1 = new Quill('#editor', {
-    placeholder: 'Masukkan Arti',
-    theme: 'snow',
-  });
-
-  quill1.on('text-change', function() {
-    document.getElementById('quillContent1').value = quill1.root.innerHTML;
-  });
-</script>

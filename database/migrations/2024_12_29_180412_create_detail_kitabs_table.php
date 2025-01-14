@@ -10,6 +10,7 @@ class CreateDetailKitabsTable extends Migration
     {
         Schema::create('detail_kitabs', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_id');
             $table->string('rujukan');
             $table->string('halaman');
             $table->timestamps();

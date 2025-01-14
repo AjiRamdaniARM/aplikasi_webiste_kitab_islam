@@ -1,5 +1,4 @@
-
-<nav id="sidebar" class="bg-white text-white w-64 h-full fixed sm:relative transform -translate-x-full flex flex-col items-center sm:translate-x-0 transition-transform duration-300 z-50 ease-in-out">
+<nav id="sidebar" class="bg-white text-white w-64 h-full fixed lg:relative transform -translate-x-full flex flex-col items-center lg:translate-x-0 sm:-translate-x-full transition-transform duration-300 z-50 ease-in-out">
     <div class="icon-component-sidebar-logo space-y-2 px-4 mt-10 py-10">
       <a href="javascript:void(0);" onclick="showSplashAndRedirect('{{ url('/') }}')" class="transition-all duration-300 ease-in-out">
         <img class="lg:w-full w-10" src="{{ asset('guest/assets/logo.svg') }}" alt="logo-component">

@@ -3,6 +3,8 @@
 <head>
     @include('components.guest.header')
     @livewireStyles
+    <link rel="stylesheet" href="{{asset('admin/css/allDataStyle.css')}}">
+
 </head>
 <body class="font-sans text-gray-900 antialiased bg-[#F5F5FD]">
     <x-splash-screen />

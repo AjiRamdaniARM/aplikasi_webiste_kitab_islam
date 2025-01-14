@@ -12,6 +12,7 @@ class LatinArabs extends Model
     protected $table = 'latin_arabs';
 
     protected $fillable = [
+        'id',
         'content_latin',
         'content_arab',
     ];

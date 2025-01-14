@@ -10,6 +10,7 @@ class CreateLatinArabsTable extends Migration
     {
         Schema::create('latin_arabs', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_id_la');
             $table->text('content_latin');
             $table->text('content_arab');
             $table->timestamps();

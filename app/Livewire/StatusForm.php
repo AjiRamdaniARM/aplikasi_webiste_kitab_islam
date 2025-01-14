@@ -23,6 +23,6 @@ class StatusForm extends Component
     }
     public function render()
     {
-        return view('livewire.status-form');
+        return view('components.admin.partials.all-data.components.status-form');
     }
 }
