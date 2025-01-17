@@ -15,7 +15,7 @@ function postHadist() {
 
         resetForm() {
             this.hadist = ''; // Reset Quill content
-            this.successMessage = null; // Reset pesan sukses
+            this.successMessagePost = null; // Reset pesan sukses
             this.isModalOpen = true; // Modal terbuka
             this.isSubmitting = false; // Reset status loading
 
@@ -28,7 +28,7 @@ function postHadist() {
             const quillTextarea = document.getElementById('editor-hadis');
             if (quillTextarea && !this.quill2) {
                 this.quill2 = new Quill('#editor-hadis', {
-                    placeholder: 'Masukkan Arti...',
+                    placeholder: 'Masukkan Hadist...',
                     theme: 'snow'
                 });
 
@@ -48,7 +48,7 @@ function postHadist() {
             try {
                 // Ambil CSRF token
                 const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-                const response = await fetch(statusPostUrlData, {
+                const response = await fetch(statusPostUrlDataHadist, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ function postHadist() {
                 const result = await response.json();
 
                 // Reset form dan tampilkan pesan sukses
-                this.successMessage = result.message || 'Data berhasil disimpan';
+                this.successMessagePost = result.message || 'Data berhasil disimpan';
                 this.isModalOpen = false; // Tutup modal setelah submit sukses
                 setTimeout(() => {
                     this.resetForm(); // Reset state setelah modal sukses

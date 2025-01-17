@@ -112,14 +112,34 @@ class KitabsController extends Controller
 
         try {
             $kodeIdNameKitabs = $this->generateKodeIdNameKitabs();
+            $kodeIdDetails = $this->generateKodeIdDetailKode();
+            $kodeIdHadist = $this->kodeHadist();
+            $kodeIdLatinsArab = $this->generateKodeIdLatinArab();
             // Simpan data ke database
             $kitabsName = IslamiKitab::create([
                 'id' => $kodeIdNameKitabs,
                 'name_kitabs' => $validatedData['name_kitabs'],
             ]);
 
+            $hadistKitab = KitabHadits::create([
+                'id' => $kodeIdHadist,
+            ]);
+
+            // Simpan ke tabel detailkitabs
+            $detailKitab = DetailKitab::create([
+                'id' => $kodeIdDetails,
+            ]);
+        
+            // Simpan ke tabel latin_arabs
+            $latinArab = LatinArabs::create([
+                'id' => $kodeIdLatinsArab,
+            ]);
+
             $contentKitabs = ContentKitab::create([
                 'id_islami_kitabs' => $kodeIdNameKitabs,
+                'id_kitab_details' => $kodeIdDetails,
+                'id_kitab_hadits'=> $kodeIdHadist,
+                'id_latin_arabs' =>$kodeIdLatinsArab,
             ]);
 
             // Berikan respons sukses
@@ -170,11 +190,12 @@ class KitabsController extends Controller
     public function generateKodeIdDetailKode()
     {
 
+        $prefix = 'NameKitabsKode';
         $number = random_int(1000, 9999); // Default jika belum ada data
         // Format kode dengan padding angka 0
-        $kodeIdDetail = sprintf($number);
+        $kodeIdDetails = sprintf(  $number);
 
-        return $kodeIdDetail; 
+        return $kodeIdDetails; 
     }
 
     //  controller delete kitabs & content 
