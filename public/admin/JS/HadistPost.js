@@ -70,7 +70,8 @@ function postHadist() {
                 this.successMessagePost = result.message || 'Data berhasil disimpan';
                 this.isModalOpen = false; // Tutup modal setelah submit sukses
                 setTimeout(() => {
-                    this.resetForm(); // Reset state setelah modal sukses
+                    this.resetForm();
+                    window.location.reload(true);
                 }, 1000);
             } catch (error) {
                 console.error('Error:', error.message);

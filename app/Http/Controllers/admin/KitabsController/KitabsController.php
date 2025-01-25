@@ -27,27 +27,34 @@ class KitabsController extends Controller
         DB::beginTransaction();
     
         try {
-            $kodeIdDetail = $this->generateKodeIdDetailKode();
-            $kodeIdLatinArab = $this->generateKodeIdLatinArab();
-          
-            // Simpan ke tabel detailkitabs
-            $detailKitab = DetailKitab::create([
-                'id' => $kodeIdDetail,
-                'rujukan' => $validatedData['rujukan'],
-                'halaman' => $validatedData['halaman'],
-            ]);
-    
-            // Simpan ke tabel latin_arabs
-             $latinArab = LatinArabs::create([
-                'id' => $kodeIdLatinArab,
-                'content_latin' => $request->content_latin,
-                'content_arab' => $request->content_arab,
-             ]);
+            $getID = ContentKitab::where('id', $id)->first(); 
+            if ($getID && $getID->id_kitab_details) {
+                $detailKitab = DetailKitab::where('id', $getID->id_kitab_details)->first();
+                if ($detailKitab) {
+                    $detailKitab->rujukan = $validatedData['rujukan'];
+                    $detailKitab->halaman = $validatedData['halaman'];
+                    $detailKitab->save();
+                } else {
+                    return response()->json(['message' => 'Detail kitab tidak ditemukan'], 404);
+                }
+            } else {
+                return response()->json(['message' => 'ID kitab tidak valid'], 400);
+            }
 
+            if ($getID && $getID->id_latin_arabs ) {
+                $latinArabs = LatinArabs::where('id', $getID->id_latin_arabs )->first();
+                if ($latinArabs) {
+                    $latinArabs->content_latin = $request->content_latin;
+                    $latinArabs->content_arab = $request->content_arab;
+                    $latinArabs->save();
+                } else {
+                    return response()->json(['message' => 'Detail kitab tidak ditemukan'], 404);
+                }
+            } else {
+                return response()->json(['message' => 'ID kitab tidak valid'], 400);
+            }
              $content = ContentKitab::where('id' , $id)->first();
-             $content -> id_kitab_details = $kodeIdDetail;
              $content -> id_status_kitabs = $request->id_status;
-             $content -> id_latin_arabs = $kodeIdLatinArab;
              $content->save();
              
     
@@ -59,7 +66,8 @@ class KitabsController extends Controller
                 'message' => 'Data berhasil disimpan',
                 'data' => [
                     'detail_kitab' => $detailKitab,
-                    'latin_arab' => $latinArab,
+                    'content' => $content,
+                    'latin_arab' => $latinArabs,
                     // 'content_kitabs' => $contentKitabs,
                 ],
             ], 200);

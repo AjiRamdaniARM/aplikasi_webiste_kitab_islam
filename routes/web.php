@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DetailKitabs\DetailController;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -35,6 +36,8 @@ Route::get('/change-language/{lang}', function ($lang) {
     }
     return Redirect::back();
 })->name('change.language');
+
+Route::get('/details-kitabs/{name_kitabs}', [DetailController::class, 'index'])->name('detail.index');
 
 
 require_once __DIR__.'/auth.php';

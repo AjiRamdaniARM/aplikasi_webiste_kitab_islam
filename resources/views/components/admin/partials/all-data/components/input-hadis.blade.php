@@ -14,8 +14,13 @@
             <form method="POST" @submit.prevent="submitFormDataHadist" enctype="multipart/form-data" class="space-y-6">
                 @csrf
                 <div>
-                    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
-                    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+                    
+                    <label for="deskripsi" class="block flex w-full justify-between text-sm font-semibold text-gray-700 py-2">Content Hadist <button onclick="toggleModalComponent2();"  type="button" class=" hover:scale-105   transition-all px-5 py-0 rounded-md ml-0 flex"> View Full Content Writing
+                        <div class="icon ml-2 text-orange-700 bg-orange-500/50 rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                            &gt;
+                        </div>
+                       </button>  
+                    </label>
                     <input type="hidden" name="hadist" x-model="hadist" id="quillContent2">
                     <div class="box-deskripsi-editor" id="editor-hadis">
                     </div>
@@ -50,6 +55,7 @@
         </div>
     </div>
 </div>
+@include('components.admin.partials.all-data.components.group-modal.modal-c-two')
 <script>
     const statusPostUrlDataHadist = "{{ route('hadist.post', ['id' => $contentKitab->id]) }}";
 </script>

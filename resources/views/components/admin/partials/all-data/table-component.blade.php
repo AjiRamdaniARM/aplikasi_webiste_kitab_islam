@@ -43,7 +43,7 @@
                         <tr tabindex="0" class="focus:outline-none h-16 border border-gray-100 rounded">
                             <td>
                                 <div class="ml-5 w-8 h-8 bg-[#B61F2D]/90 text-white flex items-center justify-center rounded-full">
-                                    1
+                                    {{ $loop->iteration}}
                                 </div>
                             </td>                                    
                             <td class="">
@@ -52,10 +52,11 @@
                                 </div>
                             </td>
                             <td class="pl-5">
-                                <button class="py-3 px-3 text-sm focus:outline-none leading-none text-red-700 bg-red-100 rounded">Due today at 18:00</button>
+                                <button class="py-3 px-3 text-sm focus:outline-none leading-none text-red-700 bg-red-100 rounded">{{ \Carbon\Carbon::parse($kitab->created_at)->format('d M Y') }}
+                                </button>
                             </td>
                             <td class="pl-4">
-                                <button class="focus:ring-2 focus:ring-offset-2 focus:ring-red-300 text-sm leading-none text-gray-600 py-3 px-5 bg-gray-100 rounded hover:bg-gray-200 focus:outline-none">View</button>
+                                <button onclick="showSplashAndRedirect('{{ route('detail.index', ['name_kitabs' => $kitab->islamiKitab->name_kitabs]) }}')" class="focus:ring-2 focus:ring-offset-2 focus:ring-red-300 text-sm leading-none text-gray-600 py-3 px-5 bg-gray-100 rounded hover:bg-gray-200 focus:outline-none">View</button>
                             </td>
                             <td>
                                 <div class="flex space-x-4 px-5 pt-2">

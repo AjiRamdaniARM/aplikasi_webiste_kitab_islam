@@ -9,7 +9,7 @@
                 </a>
             </div>
         </div> 
-        <div x-data="postData()" x-init="init" class="mt-7 overflow-x-auto form-input">
+        <div x-data="postData()" x-init="init"  class="mt-7 overflow-x-auto form-input">
             <form method="POST" @submit.prevent="submitFormData" class="space-y-6">
                 @csrf
                 <!-- Form Group Rujukan dan Rujukan -->
@@ -17,19 +17,21 @@
                     <!-- Input Nama Kitab -->
                     <div class="w-full">
                         <label for="rujukan" class="block text-sm font-semibold text-gray-700 py-2">Rujukan</label>
-                        <input 
-                            type="text" 
-                            name="rujukan" 
-                            id="rujukan" 
-                            x-model="rujukan" 
-                            class="mt-1 block w-full border border-gray-300 rounded-2xl shadow-sm focus:border-[#E67E4D] focus:ring-[#E67E4D] px-5 py-2" 
-                            placeholder="Masukkan Nama Rujukan" 
-                            required
-                        >
+                        <div>
+                            <input 
+                                type="text" 
+                                name="rujukan" 
+                                id="rujukan" 
+                                x-model="rujukan" 
+                                class="mt-1 block w-full border border-gray-300 rounded-2xl shadow-sm focus:border-[#E67E4D] focus:ring-[#E67E4D] px-5 py-2" 
+                                placeholder="Masukkan Nama Rujukan" 
+                                required
+                            >
+                        </div>
                     </div>
         
                     <!-- Input Halaman -->
-                    <div class="w-full">
+                    <div class="w-full"> 
                         <label for="halaman" class="block text-sm font-semibold text-gray-700 py-2">Halaman</label>
                         <input 
                             type="text" 
@@ -48,8 +50,8 @@
                     <div class="w-full">
                         <label for="status_kitab" class="block text-sm font-semibold text-gray-700 py-2">Status</label>
                         <select 
-                            name="status_kitab" 
-                            id="status_kitab" 
+                            name="id_status" 
+                            id="id_status" 
                             x-model = 'id_status'
                             class="mt-1 block w-full border border-gray-300 rounded-2xl shadow-sm focus:border-[#E67E4D] focus:ring-[#E67E4D] px-5 py-2" 
                             required
@@ -63,7 +65,12 @@
                 </div> 
                 <!-- Input Arti Arab -->
                 <div>
-                    <label for="deskripsi" class="block text-sm font-semibold text-gray-700 py-2">Arti Arab</label>
+                    <!-- Konten lainnya -->
+                    <label for="deskripsi" class="block flex w-full justify-between text-sm font-semibold text-gray-700 py-2">Arti Arab <button onclick="toggleModalComponent1();" type="button" class=" hover:scale-105  transition-all px-5 py-0 rounded-md ml-0 flex"> View Full Content Writing <div class="icon ml-2 text-orange-700 bg-orange-500/50 rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                        &gt;
+                    </div>
+                      </button> 
+                    </label>
                     @include('components.admin.partials.all-data.components.text-area-custom')
                 </div>
         
@@ -102,8 +109,9 @@
         
     </div>
 </div>
-
+@include('components.admin.partials.all-data.components.group-modal.modal-c-one')
 <script>
     const statusPostUrlData = "{{ route('form_create.post', ['id' => $contentKitab->id]) }}";
 </script>
 <script src="{{asset('admin/JS/dataPost.js')}}"></script>
+ 
