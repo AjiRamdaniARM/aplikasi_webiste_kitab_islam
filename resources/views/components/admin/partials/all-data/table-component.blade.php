@@ -32,7 +32,7 @@
                     </div>
                 </a>
             </div>
-            <button  x-on:click="isModalOpenCreate = true" class="focus:ring-2 focus:ring-offset-2 focus:ring-[#E67E4D] mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-[#E67E4D] hover:bg-[#E67E4D] focus:outline-none rounded">
+            <button x-on:click="isModalOpenCreate = true" class="focus:ring-2 focus:ring-offset-2 focus:ring-[#E67E4D] mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-[#E67E4D] hover:bg-[#E67E4D] focus:outline-none rounded">
                 <p class="text-sm font-medium leading-none text-white">Add Kitabs</p>
             </button>
         </div>

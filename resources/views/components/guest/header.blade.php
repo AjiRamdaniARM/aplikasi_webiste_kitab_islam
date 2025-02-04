@@ -4,7 +4,9 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <title>Website Kitab</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 <link rel="stylesheet" href="{{ asset('guest/style/fontGlobal.css')}}">
+<link rel="stylesheet" href="{{ asset('admin/css/font-global.css')}}">
 <link rel="stylesheet" href="{{ asset('guest/style/styleCustom.css')}}">
 <link rel="stylesheet" href="{{ asset('guest/style/animate.css')}}">
 <link rel="stylesheet" href="{{ asset('guest/style/Navigation_Style.css')}}">
