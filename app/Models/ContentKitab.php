@@ -26,7 +26,7 @@ class ContentKitab extends Model
     }
 
     // Relasi ke DetailKitab
-    public function detailKitab()
+    public function detailKitab ()
     {
         return $this->belongsTo(DetailKitab::class, 'id_kitab_details');
     }

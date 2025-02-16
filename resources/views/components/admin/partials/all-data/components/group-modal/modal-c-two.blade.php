@@ -12,7 +12,11 @@
       <!-- Modal Content -->
       <div class="p-4 overflow-y-auto max-h-[60vh] scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
         <p class="text-gray-700 leading-relaxed">
-            {!! $contentKitab->kitabHadits->deksripsi_hadits !!}
+          @if (!empty($contentKitab->kitabHadits) && !empty($contentKitab->kitabHadits->deskripsi_hadits))
+            {!! $contentKitab->kitabHadits->deskripsi_hadits !!}
+          @else
+            <h1>Data tidak ada</h1>
+          @endif
         </p>
       </div>
       <!-- Modal Footer -->

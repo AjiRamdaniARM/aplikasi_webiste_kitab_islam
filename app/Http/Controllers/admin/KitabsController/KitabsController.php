@@ -10,8 +10,6 @@ use App\Models\KitabHadits;
 use App\Models\LatinArabs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
-
 class KitabsController extends Controller
 {
     // post data kitabs
@@ -25,7 +23,7 @@ class KitabsController extends Controller
 
         // Gunakan transaksi database untuk memastikan integritas data
         DB::beginTransaction();
-    
+
         try {
             $getID = ContentKitab::where('id', $id)->first(); 
             if ($getID && $getID->id_kitab_details) {
@@ -57,7 +55,6 @@ class KitabsController extends Controller
              $content -> id_status_kitabs = $request->id_status;
              $content->save();
              
-    
             // Commit transaksi jika semua berhasil
             DB::commit();
     
@@ -145,9 +142,9 @@ class KitabsController extends Controller
 
             $contentKitabs = ContentKitab::create([
                 'id_islami_kitabs' => $kodeIdNameKitabs,
-                'id_kitab_details' => $kodeIdDetails,
-                'id_kitab_hadits'=> $kodeIdHadist,
-                'id_latin_arabs' =>$kodeIdLatinsArab,
+                // 'id_kitab_details' => $kodeIdDetails,
+                // 'id_kitab_hadits'=> $kodeIdHadist,
+                // 'id_latin_arabs' =>$kodeIdLatinsArab,
             ]);
 
             // Berikan respons sukses

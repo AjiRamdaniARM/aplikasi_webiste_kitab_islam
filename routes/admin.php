@@ -24,7 +24,7 @@ Route::get('/all-data', function () {
 
 Route::get('/all-data/form-create/{id}', function ($id) {
     $status = StatusKitab::all();
-    $contentKitab = ContentKitab::with('detailKitab', 'latinArabs','kitabHadits')->find($id);
+    $contentKitab = ContentKitab::with('detailKitab', 'latinArabs','kitabHadits','islamiKitab')->find($id);
     return view('components.admin.partials.all-data.form-component', ['status' => $status, 'contentKitab' => $contentKitab]);
 })->name('all-data.form');
 

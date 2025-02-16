@@ -83,6 +83,7 @@ function postData() {
                 this.isModalOpen = false; // Tutup modal setelah submit sukses
                 setTimeout(() => {
                     this.resetForm(); // Reset state setelah modal sukses
+                    window.location.reload(true);
                 }, 1000);
             } catch (error) {
                 console.error('Error:', error.message);

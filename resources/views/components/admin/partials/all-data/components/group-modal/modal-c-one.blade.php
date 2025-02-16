@@ -12,7 +12,11 @@
       <!-- Modal Content -->
       <div class="p-4 overflow-y-auto max-h-[60vh] scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
         <p class="text-gray-700 leading-relaxed">
+          @if (!empty($contentKitab->latinArabs) && !empty($contentKitab->latinArabs->content_latin))
             {!! $contentKitab->latinArabs->content_latin !!}
+          @else
+            <h1>Data Tidak Ada</h1>
+          @endif      
         </p>
       </div>
       <!-- Modal Footer -->

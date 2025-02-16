@@ -3,11 +3,13 @@
         <section>
             @include('components.guest.Section_Hero')
         </section>
-        <div class="container bg-white border-2 border-black/20 mt-10 rounded-2xl  flex flex-col gap-5 gap-0 py-5 px-5">
-            <h1 class="text-2xl">1. Kitab Iman</h1>
-            <section class="body">
-                @include('components.pages.detail-kitabs.components.component-1')
-            </section>
-        </div>
+        @foreach ($getData as $data )
+            <div class="container bg-white border-2 border-black/20 mt-10 rounded-2xl  flex flex-col gap-5 gap-0 py-5 px-5">
+                <h1 class="text-2xl">1. Kitab Iman</h1>
+                <section class="body">
+                    @include('components.pages.detail-kitabs.components.component-1')
+                </section>
+            </div>
+        @endforeach
     </main>
 </x-guest-layout>
